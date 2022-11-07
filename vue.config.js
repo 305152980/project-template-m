@@ -2,6 +2,12 @@ module.exports = {
   // 是否在开发过程中使用 eslint-loader 执行 lint-on-save。
   lintOnSave: process.env.NODE_ENV === 'development',
   productionSourceMap: false,
+  chainWebpack: config => {
+    config.plugin('html').tap(args => {
+      args[0].title = '项目模板'
+      return args
+    })
+  },
   devServer: {
     // URL 的配置。
     host: 'localhost',
