@@ -20,7 +20,7 @@ module.exports = {
       '/dev-api': {
         // 目标服务器的地址。
         // 测试 Axios 请求的目标服务器地址。
-        target: 'http://ihrm-java.itheima.net/api',
+        target: 'http://ttapi.research.itcast.cn',
         // 支持 websocket 请求的代理。
         ws: true,
         // 代理服务器转发请求时请求头中的 host 值是否伪装。
