@@ -1,5 +1,7 @@
 <template>
-  <div id="app">你好，程序员!</div>
+  <div id="app">
+    <van-button type="primary">你好，程序员!</van-button>
+  </div>
 </template>
 
 <script>
