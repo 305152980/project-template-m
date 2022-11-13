@@ -4,7 +4,7 @@ module.exports = {
   productionSourceMap: false,
   chainWebpack: config => {
     config.plugin('html').tap(args => {
-      args[0].title = '项目模板'
+      args[0].title = '黑马头条'
       return args
     })
   },
