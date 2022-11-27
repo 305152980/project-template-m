@@ -9,6 +9,9 @@ import Vant from 'vant'
 // 加载 Vant 全局样式。
 import 'vant/lib/index.css'
 
+// 导入自定义公共样式。
+import '@/assets/styles/index.scss'
+
 Vue.config.productionTip = false
 
 // 注册 Vant 组件库。
