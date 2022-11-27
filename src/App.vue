@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <van-button type="primary">你好，程序员!</van-button>
+    <router-view/>
   </div>
 </template>
 

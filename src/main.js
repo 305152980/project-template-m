@@ -12,11 +12,17 @@ import 'vant/lib/index.css'
 // 导入自定义公共样式。
 import '@/assets/styles/index.scss'
 
+// 导入 VueRouter 模块。
+import router from '@/router/index.js'
+// 添加路由权限控制。
+import '@/router/routerNavGuard.js'
+
 Vue.config.productionTip = false
 
 // 注册 Vant 组件库。
 Vue.use(Vant)
 
 new Vue({
+  router,
   render: h => h(App)
 }).$mount('#app')
