@@ -8,16 +8,16 @@ const state = {
   tokenInfo: storage.getItem(TOKEN_INFO_KEY)
 }
 const mutations = {
-  setTokenInfo(state, tokenInfo) {
-    state.tokenInfo = tokenInfo
+  setTokenInfo(state, params) {
+    state.tokenInfo = params
   },
   removeTokenInfo(state) {
     state.tokenInfo = {}
   }
 }
 const actions = {
-  async login(context, data) {
-    const result = await login(data)
+  async login(context, params) {
+    const result = await login(params)
     context.commit('setTokenInfo', result.data)
     storage.setItem(TIME_STAMP_KEY, Date.now())
   }
