@@ -1,5 +1,7 @@
 import Vue from 'vue'
-import App from './App.vue'
+
+// 导入 CSS 样式重置库。
+import 'normalize.css'
 
 // 加载动态的 rem 基准值。
 import 'amfe-flexible'
@@ -11,6 +13,8 @@ import 'vant/lib/index.css'
 
 // 导入自定义公共样式。
 import '@/assets/styles/index.scss'
+
+import App from './App.vue'
 
 // 导入 VueRouter 模块。
 import router from '@/router/index.js'
