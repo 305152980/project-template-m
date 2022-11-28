@@ -17,6 +17,9 @@ import router from '@/router/index.js'
 // 添加路由权限控制。
 import '@/router/routerNavGuard.js'
 
+// 导入 Vuex 模块。
+import store from '@/store/index.js'
+
 Vue.config.productionTip = false
 
 // 注册 Vant 组件库。
@@ -24,5 +27,6 @@ Vue.use(Vant)
 
 new Vue({
   router,
+  store,
   render: h => h(App)
 }).$mount('#app')
