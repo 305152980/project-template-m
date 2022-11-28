@@ -7,7 +7,3 @@ export function login(params) {
 export function sendSms(mobile) {
   return request(`/app/v1_0/sms/codes/${mobile}`, 'GET')
 }
-
-export function queryUserInfo() {
-  return request('/app/v1_0/user', 'GET')
-}
