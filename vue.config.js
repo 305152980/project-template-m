@@ -18,7 +18,8 @@ module.exports = {
     // 配置请求的代理服务器，解决开发阶段的跨域问题。
     proxy: {
       '/dev-api': {
-        target: 'http://ttapi.research.itcast.cn',
+        // target: 'http://ttapi.research.itcast.cn',
+        target: 'http://toutiao.itheima.net',
         // 支持 websocket 请求的代理。
         ws: true,
         // 代理服务器转发请求时请求头中的 host 值是否伪装。

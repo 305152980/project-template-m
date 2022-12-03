@@ -1,0 +1,15 @@
+const login = require('./login/index.js')
+
+const mockList = [...login]
+
+module.exports = function(app) {
+  if (process.env.MOCK === 'true') {
+    mockList.forEach(item => {
+      app.use(item.url, (req, res) => {
+        item.function(req)
+        // 将模拟的数据以 json 格式返回给浏览器。
+        res.json(item.result)
+      })
+    })
+  }
+}
