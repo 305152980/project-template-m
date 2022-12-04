@@ -1,5 +1,5 @@
 import axios from 'axios'
-import store from '@/store'
+import store from '@/store/index.js'
 import router from '@/router/index.js'
 import storage from '@/utils/storage.js'
 
@@ -24,7 +24,7 @@ instance.interceptors.request.use(
   async config => {
     if (store.getters.tokenInfo) {
       if (isTokenTimeOut()) {
-        // 清除用户信息，退出登录。
+        // 退出登录。
         // ......
         // 跳转至登录页。
         router.push('/login')
