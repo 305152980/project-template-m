@@ -1,6 +1,6 @@
 const setItem = (key, value) => {
-  // 将对象、数组类型的数据转换为 JSON 格式的字符串进行存储。
   if (typeof value === 'object') {
+    // 将对象、数组类型的数据转换为 JSON 格式的字符串进行存储。
     value = JSON.stringify(value)
   }
   window.localStorage.setItem(key, value)

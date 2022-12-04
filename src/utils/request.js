@@ -1,4 +1,10 @@
 import axios from 'axios'
+import store from '@/store'
+import router from '@/router/index.js'
+import storage from '@/utils/storage.js'
+
+const TIME_STAMP_KEY = 'TOUTIAO_TIME_STAMP'
+const TokenTimeOut = 90 * 60 * 1000 // 定义 token 的过期时间，单位毫秒。（这个需要与后端约定。）
 
 // 创建一个 Axios 实例。
 const instance = axios.create({
@@ -16,9 +22,18 @@ const instance = axios.create({
 // 请求拦截器。
 instance.interceptors.request.use(
   async config => {
-    // 验证 token 是否已过期。
-    // 如果过期，退出系统并跳转至登录页；如果未过期，将 token 设置进请求头。
-    // ......
+    if (store.getters.tokenInfo) {
+      if (isTokenTimeOut()) {
+        // 清除用户信息，退出登录。
+        // ......
+        // 跳转至登录页。
+        router.push('/login')
+        return Promise.reject(new Error('您的 token 已失效！'))
+      }
+      config.headers.Authorization = `Bearer ${store.getters.tokenInfo.token}`
+      storage.setItem(TIME_STAMP_KEY, Date.now())
+      return config
+    }
     return config
   },
   error => {
@@ -38,6 +53,11 @@ instance.interceptors.response.use(
     return Promise.reject(error)
   }
 )
+
+// 检查 token 是否过期。
+function isTokenTimeOut() {
+  return (Date.now() - parseInt(storage.getItem(TIME_STAMP_KEY))) > TokenTimeOut
+}
 
 // 请求工具函数。
 export default (url, method, submitData) => {
