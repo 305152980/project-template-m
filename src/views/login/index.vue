@@ -22,8 +22,8 @@
         label="验证码"
         placeholder="请输入验证码"
         required
-        center
         clearable
+        center
       >
         <template #button>
           <van-count-down
@@ -91,7 +91,7 @@ export default {
       await this.$refs.loginFormRef.validate('mobile')
       try {
         await sendSms(this.loginFormInfo.mobile)
-        this.isCountDownShow = true
+        this.isShowCountDown = true
         this.$toast('验证码发送成功，请注意查收！')
       } catch (error) {
         if (error.response.status === 429) {
@@ -99,8 +99,6 @@ export default {
         } else {
           this.$toast('验证码发送失败，请稍后重试！')
         }
-      } finally {
-        this.isCountDownShow = false
       }
     },
     async onSubmit() {
@@ -112,6 +110,7 @@ export default {
       try {
         await this.login(this.loginFormInfo)
         this.$toast.success('登录成功!')
+        this.$router.push('/home')
       } catch (error) {
         if (error.response.status === 400) {
           this.$toast.fail('手机号或验证码错误!')
