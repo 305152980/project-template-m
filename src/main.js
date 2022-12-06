@@ -44,5 +44,9 @@ Vue.use(Commons)
 new Vue({
   router,
   store,
-  render: h => h(App)
+  render: h => h(App),
+  beforeCreate() {
+    // 挂载全局事件总线。
+    Vue.prototype.$bus = this
+  }
 }).$mount('#app')
