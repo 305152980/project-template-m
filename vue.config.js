@@ -10,7 +10,7 @@ module.exports = {
   },
   devServer: {
     // URL 的配置。
-    host: 'localhost',
+    host: '0.0.0.0',
     // 端口号的配置。
     port: 8080,
     // 自动打开浏览器。
