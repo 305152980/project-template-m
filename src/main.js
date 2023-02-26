@@ -16,10 +16,10 @@ import 'vant/lib/index.css'
 import '@/assets/styles/index.scss'
 
 // 导入自定义全局组件。
-import Globals from '@/components/globals/index.js'
+import Globals from '@/components/global/index.js'
 
 // 导入自定义公共组件。
-import Commons from '@/components/commons/index.js'
+import Commons from '@/components/common/index.js'
 
 import App from './App.vue'
 
@@ -27,7 +27,7 @@ import App from './App.vue'
 import router from '@/router/index.js'
 
 // 添加路由权限控制。
-import '@/router/routerNavGuard.js'
+import '@/router/router-nav-guard.js'
 
 // 导入 Vuex 模块。
 import store from '@/store/index.js'
