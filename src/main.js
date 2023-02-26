@@ -3,11 +3,12 @@ import Vue from 'vue'
 // 导入 CSS 样式重置库。
 import 'normalize.css'
 
-// 导入动态的 rem 基准值。
+// 导入动态的 rem 基准值。（设置 html 标签的字体大小。）
 import 'amfe-flexible'
 
 // 导入 Vant 组件库。
 import Vant from 'vant'
+
 // 导入 Vant 全局样式。
 import 'vant/lib/index.css'
 
@@ -24,6 +25,7 @@ import App from './App.vue'
 
 // 导入 VueRouter 模块。
 import router from '@/router/index.js'
+
 // 添加路由权限控制。
 import '@/router/routerNavGuard.js'
 

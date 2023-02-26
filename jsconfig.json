@@ -5,5 +5,5 @@
       "@/*": ["./src/*"]
     }
   },
-  "exclude": ["node_modules", "dist", "src/vender"]
+  "exclude": ["node_modules", "dist", "src/plugins"]
 }
