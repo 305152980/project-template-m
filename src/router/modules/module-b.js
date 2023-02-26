@@ -1,12 +1,9 @@
-const state = {}
+const moduleB = () => import('@/views/module-b/index.vue')
 
-const mutations = {}
-
-const actions = {}
-
-export default {
-  namespaced: true,
-  state,
-  mutations,
-  actions
-}
+export default [
+  {
+    path: '/moduleB',
+    name: 'ModuleB',
+    component: moduleB
+  }
+]

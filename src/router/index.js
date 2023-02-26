@@ -1,20 +1,25 @@
 import Vue from 'vue'
-import Vuex from 'vuex'
+import VueRouter from 'vue-router'
 
-import moduleA from '@/store/modules/module-a.js'
-import moduleB from '@/store/modules/module-b.js'
-import getters from '@/store/getters.js'
+import constantRoutes from '@/router/constant-routes.js'
 
-// 全局注册 Vuex 状态管理模式。
-Vue.use(Vuex)
+// 全局注册 VueRouter 路由模块。
+Vue.use(VueRouter)
 
-// 实例化 Vuex 中的 Store 对象。
-const store = new Vuex.Store({
-  modules: {
-    moduleA,
-    moduleB
-  },
-  getters
-})
+const createRouter = () =>
+  new VueRouter({
+    // 开启 history 模式需要服务端的支持。
+    // mode: 'history',
+    scrollBehavior: () => ({ x: 0, y: 0 }),
+    routes: constantRoutes
+  })
 
-export default store
+// 创建一个 VueRouter 实例。
+const router = createRouter()
+
+export function resetRouter() {
+  const newRouter = createRouter()
+  router.matcher = newRouter.matcher
+}
+
+export default router
