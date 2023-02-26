@@ -1,4 +1,4 @@
-# toutiao_m
+# project-template-m
 
 ## Project setup
 
