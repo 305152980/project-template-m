@@ -1,5 +1,5 @@
 import axios from 'axios'
-// import { Message } from 'element-ui'
+import { Notify } from 'vant'
 
 // 创建一个 Axios 实例。
 const instance = axios.create({
@@ -34,7 +34,7 @@ instance.interceptors.response.use(
     if (success) {
       return data
     } else {
-      // Message.error(message)
+      Notify({ type: 'danger', message: message })
       return Promise.reject(new Error(message))
     }
   },
@@ -42,7 +42,7 @@ instance.interceptors.response.use(
     // 功能需求：查看后端是否响应给前端 token 已过期。
     // 代码逻辑：如果后端响应给前端 token 已过期，则退出系统并跳转至登录页。
     // ......
-    // Message.error(error.message)
+    Notify({ type: 'danger', message: error.message })
     return Promise.reject(error)
   }
 )
