@@ -1,7 +1,12 @@
 module.exports = {
-  // 配置项目的静态资源引入时的基础路径。
+  // 部署应用包时的基本 URL。
   publicPath: process.env.NODE_ENV === 'development' ? '/' : '/',
+  // 放置生成的静态资源 (js、css、img、fonts) 的 (相对于 outputDir 的) 目录。
+  assetsDir: './static',
+  // 指定生成的 index.html 的输出路径 (相对于 outputDir)。也可以是一个绝对路径。
+  indexPath: './template/index.html',
   // 是否在开发过程中使用 eslint-loader 执行 lint-on-save。
+  // 是否在开发环境下通过 eslint-loader 在每次保存时 lint 代码。这个值会在 @vue/cli-plugin-eslint 被安装之后生效。
   lintOnSave: process.env.NODE_ENV === 'development',
   productionSourceMap: false,
   chainWebpack: config => {
