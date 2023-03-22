@@ -14,6 +14,8 @@ module.exports = {
       args[0].title = '项目模板'
       return args
     })
+    // 关闭 webpack 的性能提示。
+    config.performance.hints(false)
   },
   devServer: {
     // URL 的配置。
