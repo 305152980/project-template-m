@@ -28,12 +28,12 @@ module.exports = {
     proxy: {
       '/dev-api': {
         // 目标服务器的地址。
-        target: 'http://......',
+        target: 'http://......:...',
         // 支持 websocket 请求的代理。
         ws: true,
         // 代理服务器转发请求时请求头中的 host 值是否伪装。
         changeOrigin: true,
-        // localhost:8080/dev-api/login ==> http://......:8080/login
+        // localhost:8080/dev-api/login ==> http://......:.../login
         pathRewrite: {
           '^/dev-api': ''
         }
