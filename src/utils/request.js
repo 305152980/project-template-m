@@ -1,10 +1,12 @@
 import axios from 'axios'
 import { Notify } from 'vant'
 
+const vueConfig = require(`${process.env.BASE_URL}vue-config.js`)
+
 // 创建一个 Axios 实例。
 const instance = axios.create({
   // npm run dev ==> /dev-api   npm run build ==> /prod-api
-  baseURL: process.env.VUE_APP_BASE_API,
+  baseURL: vueConfig.VUE_APP_BASE_API || process.env.VUE_APP_BASE_API,
   // 请求的超时时间。
   timeout: 10000,
   // 设置请求头的参数。
